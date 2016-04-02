@@ -26,8 +26,8 @@ subject_test<- read.table("UCI HAR Dataset/test/subject_test.txt",header = FALSE
 
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt",header = FALSE,stringsAsFactors = FALSE, col.names = c("actid","activityName"))
 
-activities_train <- merge(y_train,activity_labels, by = "actid",  all = TRUE ,sort = FALSE)
-activities_test <- merge(y_test,activity_labels, by = "actid",  all = TRUE ,sort = FALSE)
+activities_train <- left_join(x = y_train, y = activity_labels, by.x  = "actid",by.y  = "actid" ,  all = TRUE ,sort = FALSE )
+activities_test <- left_join(x = y_test,y = activity_labels,  by.x  = "actid",by.y  = "actid" ,  all = TRUE ,sort = FALSE)
 
 X_train <-cbind(subject_train["subject"],activities_train["activityName"], X_train)
 X_test <-cbind(subject_test["subject"], activities_test["activityName"], X_test)

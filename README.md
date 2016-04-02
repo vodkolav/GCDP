@@ -2,7 +2,9 @@
 Coursera Getting and cleaning data final project
 
 To run the script:
-Set your working directory to the directory where the extracted data is (setwd())
-source the "run_analysis.R" file
+1)Set your working directory to the working copy of my repository(setwd())
+alternatively, you can put the "run_analysis.R" file into the directory 
+where the you have downloaded and extracted the data
+2)source the "run_analysis.R" file
 
-see explanation of all the logic in CodeBook.md
+See explanation of all the logic in CodeBook.md

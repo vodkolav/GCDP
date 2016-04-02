@@ -1,8 +1,7 @@
-#rm(list = "data")
+
 library(dplyr)
 
 features <- read.table("UCI HAR Dataset/features.txt",header = FALSE,stringsAsFactors = FALSE)
-#features <- features["V2"]
 
 if (!exists("X_train_src")) # dont read these massive tables at every run
 {
@@ -15,7 +14,6 @@ inds<- grep("mean|std",features)
 reqFeatures <- features[inds]
 inds2<- grep('^(?!.*meanFreq).*$',reqFeatures, perl =T)
 reqFeatures <- reqFeatures[inds2]
-
 
 X_train<- X_train_src[,reqFeatures]
 X_test<- X_test_src[,reqFeatures]
